@@ -1,0 +1,121 @@
+@charset "utf-8";			
+	/*轮播图*/
+			.bannerbg{width: 100%;position: relative;height: auto;}
+			.banner{overflow: hidden;width: 100%;}
+			.banner .bannerpic{width: 1000%;position: relative;}
+			.bannerpic{left:-100%;}
+			.banner .banpic{float: left;width: 10%;position: relative;}
+			.banner img{width: 100%;height: 100%;}
+			.bts{width: 382px;left: 50%;overflow: hidden;position: absolute;padding: 20px 0;margin-left: -191px;}
+			.bts a{width: 24px;height: 24px;margin: 0 10px;position: relative;}
+			.bts i{width: 12px;height: 12px;display: block;border-radius: 6px;background-color: #cccccc;
+					float: left;position: absolute;top:50%;left: 50%;margin-left: -6px;margin-top: -6px;}
+			.bts i:hover{background: red;cursor: pointer;}
+			.bts .active{width: 18px;height: 18px;border-radius: 9px;background: red;
+					margin-left:-9px;margin-top:-9px;}
+			.arrow{height: 57px;width: 32px;overflow: hidden;position: absolute;top: 50%;margin-top: -55px;}
+			.rarrow{background: none;left: 15px;/*display: none;*/}
+			.arrow i{width:24px ;height:52px;background: url(../img/logo/arrow.png) no-repeat;
+					margin-top: 2px;margin-left: 2px;}
+			.rarrow i{background-position: 0 0px;}
+			.arrow:hover{background: #FEFEFE;}
+			.larrow{background: none;left:97%;}
+			.larrow i{background-position: -24px 0;}
+			
+			.slogan .btn1{left: 22%;top:55%;width: 75px;}
+			.slogan .btn:hover{background: black;cursor: pointer;}
+			.slogan{}
+			.slogan i{position: absolute;top:3px;right: 3px;border-top: 4px solid white;
+						border-right: 4px solid white;border-bottom: 4px solid transparent;
+						border-left: 4px solid transparent;}
+			.slogan h2{position: absolute;line-height: 76px;font-size: 72px;margin-top: 12px;
+   						 margin-bottom: 20px;font-weight: 900;letter-spacing: -3px;color: white;}
+   						 
+			.slogan .h21{top:47%;margin-top: -42px;right: 100px;color: #000000;}
+			.slogan .btn2{top:46%;margin-top:54px;right: 100px;}
+			.slogan .h231{top:29%;left: 100px;}
+			.slogan .h232{top:29%;margin-top:108px;left: 100px;}
+			.slogan h5{position: absolute;font-weight: 500;font-size: 28px;line-height: 1.1;color: white;}
+			.slogan .h53{top:27%;left: 100px;margin-top: 205px;}
+			.slogan .btn3{top:27%;margin-top:248px;left: 100px;}
+			.slogan .wz{position: absolute;margin-left: 100px;background: none;color: white;font-size: 84px;
+						top:200px;}
+			.slogan .xian,.slogan .xian2{display: block;position: absolute;
+										width: 370px;height: 21px;background: white;}
+			.slogan .xian{top:300px;left:81px;}
+			.slogan .h54{top:328px;left: 100px;}
+			.slogan .btn4{top:370px;left: 100px;}
+			.slogan .h251{top:180px; right: 100px;}
+			.slogan .h252{top:270px; right: 100px;}
+			.slogan .xian2{top:348px;right: 81px;}
+			.slogan .h55{top:380px;right: 100px;}
+			.slogan .btn5{top:425px;right: 100px;}
+			.slogan .h26{top:50%;margin-top: -85px;left: 50%;margin-left: -325px;}
+			.slogan .h56{top:50%;left:39%;margin-top: 20px;}
+			.slogan .btn6{top:60%;left:50%;margin-left: -50px;margin-top: 10px;}
+			.slogan .btn71{top:59%;left:42%}
+			.slogan .btn72{top:59%;left: 49%;margin-left: 5px;}
+			.slogan .btn8{top:56%;left: 21%;}
+			
+			/*视频*/
+			.sptitle{margin-top: 105px;text-align: center;}
+			.sptitle h1{font-weight: bold;font-size: 36px;}
+			.sptitle h2{margin:10px 0;font-weight: 500;line-height: 1.1;font-size: 30px;}
+			
+			.spbg{width: 100%;margin-top: 30px;}
+			.sp{max-width: 1105px;margin: 10px auto;overflow: hidden;}
+			.spl{width: 815px;margin-right: 15px;float: left;position: relative;}
+			.spl img{width: 100%;height: 100%;}
+			
+			.spl a{width: 84px;height: 58px;background: url(../img/shiping/video_play.png) no-repeat;
+					position: absolute;top:50%;left: 50%;margin-left: -42px;margin-top: -29px;}
+			.spl a:hover{background: url(../img/shiping/video_play_hover.png);cursor: pointer;}
+			.spr{width:235px;height: 455px;float: left;overflow-y: scroll;margin-left: 15px;
+				scrollbar-base-color: red;overflow-x: hidden;}
+			.spr img{width: 100%;}
+			
+			/*当季最热/新品上市/热门推荐*/
+			.main h1{font-weight: bold;font-size: 36px;margin-bottom: 35px;}
+			.main{text-align: center;margin: 95px auto;}
+			.hpic{float: left;width: 33.3%;position: relative;}
+			.himg{width: 100%;position: relative;overflow: hidden;max-height: 271px;}
+			.hpic img{width: 100%;position: position;}
+			.hpic h5{font-size: 22px;margin-top: 20px;margin-bottom: 10px;font-weight: normal;}
+			.hpic h6{font-size: 14px;font-weight: normal;}
+			.hpic h6 a{text-decoration:underline ;}
+			.hpic h6 a:hover{color: red;}
+			
+			/*新品上市*/
+			.new{margin: 95px 90px 0 90px;}
+			.newsbg{margin: auto;padding: 0 45px 45px;position: relative;max-height: 367px;}
+			.news{margin: 0 auto;width: 100%;overflow: hidden;max-height: 322px;}	
+			.newpic{float: left;width: 32%;padding:0 5px;position: relative;}	
+			.newpic img{width: 100%;}	
+			.newpic h3{width:100%;position: absolute;font-size: 28px;top:50%;text-align: center;
+						margin-top: -35px;line-height: 30px;font-weight: 500;}
+			.newpic h3 a{color: white;}
+			/*.newsbg*/ .newbtn{width: 32px;height: 57px;position: absolute;top:50%;margin-top: -22px;}
+			.newsbg i,.hotSalebg i{left: 50%;margin-left: -12px;width: 24px;height: 52px;position: absolute;background: url(../img/logo/arrow.png);}
+			/*.newsbg*/ .newbtnl{left: 0;}
+			/*.newsbg*/ .newbtnr{right: 0;}
+			.newbtnl i{background-position: 0 0;}
+			.newbtnr i{background-position: -24px 0;}
+
+			/*热卖推荐*/
+			.hotSale{margin: 95px 90px 0 90px;}
+			.hotSalebg{margin: auto;padding: 0 45px 45px;position: relative;max-height: 367px;overflow: hidden;}
+			.hspicbg{width: 100%;overflow: hidden;position: relative;}
+			.hspic{width: 200%;overflow: hidden;}
+			.hspics{width:12.5%;float: left;}
+			.hspic h4{font-size: 13px;line-height: 20px;font-weight: normal;}
+			.hspic span{font-size: 14px;line-height: 16px;font-weight: 700;}
+			
+			/*底部小banner*/
+			.fbannerbg{max-width: 1040px;margin: 0 auto;position: relative;}
+			.fbanner{margin-top: 50px;overflow: hidden;}
+			.fbannerleft{margin-top: 50px;max-width: 320px;float: left;}
+			.fbannerright{max-width: 585px;float: right;}
+			.fbannerleft span{line-height: 1.42857143;font-size: 24px;}
+			.fbannerleft .btn{margin-top: 50px;}
+			
+

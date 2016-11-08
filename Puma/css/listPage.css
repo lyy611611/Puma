@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+.bodybg{max-width:100%;}
+.body{max-width: 1200px;padding: 0px 10px;font-family: "geogtq-rg","微软雅黑", "黑体","宋体", Arial, Helvetica, sans-serif;margin: auto;}
+.toptitle{padding: 26px 0;}
+.toptitle li{float: left;font-size: 12px;padding: 0 4px;}
+.mainbg{overflow: hidden;width: 100%;}
+.main{position: relative;overflow: hidden;}
+.mainleft{float: left;width: 240px;box-sizing: border-box;padding: 0px 20px 0px 0px;}
+.mainleft h3{font-size: 22px;margin: 10px 0px;font-weight: bold;line-height: 1.1;}
+
+/*左侧导航*/
+.mainleft ul{overflow: hidden;}
+.mainleft ul .outsideli{width: 100%;font-size: 12px;line-height: 28px;cursor: pointer;border-bottom: 1px solid #e0e0e0;}
+.mainleft ul li a{margin: 4px 0px 0px;}
+.mainleft .insideul{margin: 5px 0px;}
+.mainleft .insideul{padding: 0px 0px 0px 20px;}
+.outsideli .inline{width: 100%;}
+.outsideli .inline span,.slectpricetitle span,.sizetitle span,.colortitle span{margin-top:5px;float: right;display: inline-block;height: 15px;width: 15px;background: url(../img/list/logo/toggle-icon.png) no-repeat;}
+.mainleft .insideul{display: none;}
+
+/*筛选*/
+.filter{position: relative;margin: 30px 0px 15px 0px;text-align: center;}
+.filter-title{position: relative;background-color: #000;font-size: 20px;height: 38px;line-height: 38px;color: #FFF;text-align: center;}
+.filter-title i{display: block;width: 0px;height: 0px;position: absolute;border-width: 6px;border-style: solid;bottom: -12px;left: 0px;border-color: #000 transparent transparent #000;}
+.clearfilter{margin: 20px 0px 0px;text-decoration: underline;}
+/*价格区间*/
+.slectpricetitle span,.sizetitle span,.colortitle span{background-position:-15px 0 ;}
+.slectprice{position: relative;border-bottom: 1px solid #e0e0e0;}
+.slectpricetitle{height: 32px;cursor: pointer;}
+.sliter{overflow: hidden;margin: 0px 0px 10px;}
+.slitermain{padding: 12px 0px 30px;font-size: 14px;width: 100%;}
+.slip{position: relative;height: 20px;cursor: pointer;}
+.hxian{height: 0px;border: 1px solid #E8E8E8;position: absolute;top: 10px;width: 100%;}
+.hxian a{position: absolute;top: -10px;width: 23px;height: 20px;background: url(../img/list/logo/slider-refinements.png) no-repeat;}
+.hxian .slipleft{left: 0%;background-position: 0 0;}
+.hxian .slipright{right: 0%;background-position: -28px 0;}
+.limit{padding: 10px 0px 0px 0px;color: #666;font-size: 12px;}
+/*尺码*/
+.size{position: relative;border-bottom: 1px solid #e0e0e0;}
+.sizetitle{height: 32px;cursor: pointer;line-height: 32px;}
+.sizelist{margin: 0px -10px 5px 0px;overflow: hidden;}
+.sizelist li{float: left;width: 35px;margin: 0px 10px 10px 0px;font-size: 10px;text-align: center;background: #EAEAEA;line-height: 29px;}
+/*颜色*/
+.color{position: relative;border-bottom: 1px solid #e0e0e0;}
+.colortitle{height: 32px;cursor: pointer;line-height: 32px;}
+.colormain{margin: 0px 0px 8px;}
+.colormain  li{position: relative;display: inline-block;vertical-align: top;margin: 0px 6px 8px 0px;height: 16px;}
+.colormain  a{height: 10px;width: 43px;margin-bottom: 3px;border: 1px solid #cfcfcf;outline: 0px solid #EAEAEA;}
+
+/*你可能喜欢*/
+.youlikebg{margin: 30px auto 0px;overflow: hidden;}
+.youlike{width: 166px;margin: 0px auto;}
+.youmaylike{margin: 0px auto;height: 48px;
+		    width: 120px;
+		    text-align: center;
+		    line-height: 48px;
+		    background-color: #999;
+		    color: #fff;
+		    font-size: 14px;}
+.likelist{overflow: hidden;}
+.likelist .pics{cursor: pointer;text-align: center;width: 100%;color: #666;}
+.likelist .pics a{display: block;}
+.likelist .pics a img{padding: 18px 20px;}
+.liketitle{font-size: 12px;}
+.jiantou{display: block;position: relative;left: 70px;}
+
+/*右侧商品列表*/
+.mainright{width: 940px;box-sizing: border-box;display: inline-block;float: right;}
+.listtoptitle{position: relative;min-height: 95px;border-bottom: 2px solid #000;}
+.listtoptitle .data{font-weight:500;float: left;margin: 3px 0px 0px 0px;font-size: 36px;}
+.listtoptitle .tet{font-weight:500;font-size: 14px;float: left;margin: 21px 0px 0px 5px;}
+.order{position: relative;}
+.ordertxt{font-size: 14px;letter-spacing: 2px;float: left;height: 26px;line-height: 26px;margin-right: 2px;}
+.order ul{float: left;overflow: hidden;}
+.order ul li{margin: 0px 5px;margin: 0px 5px;float: left;}
+.order .inline{padding: 6px 10px 5px;border: 1px solid #666;border-radius: 2px;line-height: 12px;}
+.order .inline:hover{color: #fff;background: #f00;}
+.page{position: relative;margin: 20px 0px 40px;overflow: hidden;}
+.pagenumboxbg{float: left;overflow: hidden;}
+.pagenumbox{overflow: hidden;}
+.tabpage{background: url(../img/list/logo/paging-arrows.png) no-repeat  144px 72px;float: left;min-width: 36px;display: table-cell;line-height: 36px;min-height: 36px;text-align: center;cursor: pointer;}
+.tofirst{background-position: 0 0;}
+/*.tofirst:hover{background: red;}*/
+.page .pagefront{background-position: -36px 0px;}
+.pagenum{overflow: hidden;float: left;}
+.pagenumbox{float: left;}
+.pagenum li{display: block;float: left;min-width: 30px;    line-height: 36px;min-height: 36px;text-align: center;}
+.pagenum li .current-page{color: #FFF;background-color: #F00;}
+.pagenum li a{width: 100%;color:#F00 ;}
+.pagenum li a:hover{color: #FFF;background-color: #F00;}
+.pagenext{background-position: -72px 0px;}
+.tolast{background-position: -108px 0px;}
+.targetpage{float: left;width: 80px;margin: 4px 0px 0px 10px;}
+.targetpagebox{position: relative;width: 100%;}
+.pagebtn{margin:0;padding:0;width: 80px;text-align: center;border: 1px solid #ccc;background: #fff;line-height: 28px;}
+.pagebtntxt{line-height: 28px;padding-right: 28px;}
+.pagebtn span{height: 28px;background-color: #ff0000;width: 28px;display: block;position: absolute;border-left: 1px solid #ccc;top: 1px;right: -1px;}
+.pagebtn .down{color:white;border-width: 5px 5px medium;    right: 10px;margin-top: -2px;position: absolute;top: 50%;border-left: 4px solid transparent;border-right: 4px solid transparent;border-top: 4px solid;}
+.pagebtn span:hover{background: black;}
+.rightbtn{float: right;margin: 4px 0px 0px;}
+.rightbtn .rightbtntxt{float: left;height: 28px;line-height: 28px;}
+.pagebtn2{float: left;width: 80px;margin: 0px 8px;position: relative;}
+.pagenumber{position: absolute;border: 1px solid #999;top: 100%;left: 0;z-index: 101;}
+.pagenum ul{font-size: 14px;}
+.pagenum ul li{border-bottom: 1px solid #ccc;}
+.goodsbg{position: relative;overflow: hidden;}
+.goods{float: left;min-height: 450px;text-align: center;padding: 0px 10px;box-sizing: border-box;border: 1px solid #FFF;width: 25%;}
+.products{position: relative;height: 410px;padding: 20px 0px;box-sizing: border-box;}
+.productsimg{position: relative;height: 220px;}
+.span2{position: absolute;left: 0;top: 0px;max-width: 204px;padding: 0 12px;height: 18px;background: #000;color: #FFF;font-size: 12px;text-align: center;overflow: hidden;}
+.smallpic{margin: 20px 0px 15px 0px;position: relative;}
+.productview{position: relative;padding: 0px;overflow: hidden;width: 184px;margin: 0px auto;}
+.productview ul{width: 184px;margin: autoposition: relative;    padding: 5px 0px;white-space: nowrap;;}
+.previewpic{max-height:35px;overflow:hidden;width: 38px;display: inline-block;vertical-align: top;border: 3px solid #ffffff;}
+.previewpica{position: relative;display: block;padding: 0px;background: none;margin: 0px auto;width: 35px;}
+.previewpica img{width: 100%;}
+.proimess{border-top: 1px solid #CCC;}
+.proinform{height:48px;padding: 0px 15px;display: block;margin: 18px 0px 5px;font-size: 14px;line-height: 16px;}
+.proprice{height: 20px;color: #555;font-size: 14px;font-weight: 600;}
+.saleprice{color: #F00;margin-right: 5px;}
+.blackprice{text-decoration: line-through;}
+.goods:hover{border: 1px solid #CCC;}
+.pagebg{overflow: hidden;background: #eaeaea;;padding: 40px 20px;margin: 10px 0px 50px;}

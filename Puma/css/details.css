@@ -1,0 +1,104 @@
+@charset "utf-8";
+.bodybg{max-width:100%;}
+.body{max-width: 1200px;padding: 0 15px;font-family: "geogtq-rg","微软雅黑", "黑体","宋体", Arial, Helvetica, sans-serif;margin: auto;}
+.toptitle{padding: 26px 0;}
+.toptitle li{float: left;font-size: 12px;padding: 0 4px;}
+
+/*图片展示*/
+.mainleft{width: 1035px;float: left;position: relative;}
+.picbg{width: 520px;float: left;}
+.picbox{background-color: #ffffff;width: 100%;height: 100%;}
+.pic{text-align: center;width: 100%;height: auto;padding-top: 38px;position: relative;}
+.pic img{width: 100%;}
+.pic span{position: absolute;left: 0;top: 38px;max-width: 204px;padding: 0 12px;height: 18px;background: #000;color: #FFF;font-size: 12px;text-align: center;overflow: hidden;}
+.eee{border-bottom: 1px solid #e0e0e0;height: 35px;overflow: hidden;}
+.fangda{margin-left: 20px;float: left;margin-top: 7px;}
+.smallpic{position: relative;padding: 0 25px;margin: 0 auto;width: 470px;margin-top: 20px;}
+.smallpicbox{margin: 0 auto;position: relative;overflow: hidden;height: 95px;}
+.smallpicbox {width: 100%;}
+.smallpicbox ul{overflow: hidden;position: absolute;z-index: 2;width: 125%;}
+.smallpicbox ul li{width: 20%;float: left;vertical-align: middle;text-align: center;}
+.smallpicbox ul li img{padding-bottom: 12px;text-align: center;}
+.btna{position: absolute;top: 35px;height: 57px;width: 32px;overflow: hidden;cursor: pointer;}
+.btna i{display:block;width: 14px;height: 22px;background: url(../img/logo/arrow.png) no-repeat;}
+.front i{background-position: 0 -104px;}
+.front{left: 0px;}
+.back i{background-position:-11px -124px;}
+.back{right: 0;}
+.bigpicbox{z-index:2;display:none;overflow:hidden;margin-left:60px;width: 457px;height: 553px;position: absolute;left: 50%;border:1px solid #CCCCCC;top:38px;background: white;}
+#mask{display:none;width: 118.82px;height: 143.78px;position: absolute;background: transparent!important;transform: translateZ(0px);box-shadow: -0px -0px 10px rgba(0,0,0,0.40);cursor: crosshair;}
+/*商品信息*/
+.goodinfor{margin-right: 25px;float: right;width: 405px;position: relative;margin-top: 30px;min-height:200px ;}
+.goodinfor .informtitle{font-size: 28px;font-weight: bold;letter-spacing: -1px;}
+.goodinfor p{line-height: 1.42857143;font-size: 12px;}
+.priceinform{font-size: 26px;}
+.goodinfor .number{margin-bottom: 17px;}
+.usa{width: 100%;overflow: hidden;padding-top: 12px;}
+.usabor{width:38px;border: 3px solid #F00;margin-right: 8px;float: left;margin-bottom: 4px;float: left;}
+.usabor img{width: 100%;}
+.select{margin-top: 36px;width: 100%;font-size: 14px;}
+.selectsize{margin-right: 20px;position: relative;max-width: 350px;}
+.sizetit{margin-right: 8%;}
+.sizetit .tit{float: left;}
+.righttit{float: right;color: red;}
+.sizeli ul{overflow: hidden;}
+.block{display: block;}
+.sizeli ul li{background: #F00;color: #ffffff;float: left;padding: 6px 12px;margin-right: 8px;margin-top: 10px;margin-bottom: 6px;cursor: pointer;}
+.count{margin-top: 28px;}
+.selectnum{width: 140px;margin-top: 6px;height: 28px;display: inline-block;vertical-align: middle;position: relative;}
+.selectnumbox{line-height: 29px;background-color: #eaeaea;color: #333333;text-align: left;height: 28px;padding: 0 0 0 10px;}
+.selectnumbox b{font-weight: normal;}
+.selectnum span{display:block;height: 28px;background-color: #ff0000;position: absolute;right: 0;top: 0;width: 28px;border-left: 1px solid #ccc;}
+.selectnum span i{color:white;border-width: 5px 5px medium;    right: 10px;margin-top: -2px;position: absolute;top: 50%;border-left: 4px solid transparent;border-right: 4px solid transparent;border-top: 4px solid;}
+.selectnum span:hover{background: black;}
+.numli{position: absolute;display: none;}
+.numli ul{overflow: hidden;border: 1px solid #999999;}
+.numli ul li{cursor:pointer;background:#eaeaea ;width:128px;line-height: 28px; padding: 0 0 0 10px;border-top: 1px solid white;}
+.numli ul li:hover{background: red;}
+.youhuo{margin-top: 14px;margin-left: 5px;position: relative;margin-top: 2px;}
+.youhuo img{position: relative;top:5px;}
+.carbtn{text-align: center;position: relative;margin-top: 25px;width: 225px;height: 45px;font-size: 14px;color: #FFF;cursor: pointer;background-color: #ff0000;line-height: 45px;}
+.carbtn i{position: absolute;top:3px;right: 3px;border-top: 4px solid white;
+						border-right: 4px solid white;border-bottom: 4px solid transparent;
+						border-left: 4px solid transparent;}
+.carbtn:hover{background: black;}
+.share{margin-top: 55px;vertical-align: middle;font-size: 12px;}
+.share .inline{margin-left: 5px;background: url(../img/logo/headerfooter.png) no-repeat;    width: 30px;height: 30px;}
+.share .weibo{background-position: -287px -110px;}
+.share .wechat{background-position: -328px -110px;}
+
+
+/*你可能喜欢*/
+.mainright{margin-top: 38px;width: 146px;height: auto;float: right;}
+.youlikebg{overflow: hidden;width: 146px;}
+.youlike{width: 166px;margin: 0px auto;padding-left:20px ;box-shadow: -0px -0px 10px rgba(0,0,0,0.40)}
+.youmaylike{margin: 0px 0;height: 48px;
+		    width: 120px;
+		    text-align: center;
+		    line-height: 48px;
+		    background-color: #999;
+		    color: #fff;
+		    font-size: 12px;}
+.likelist{overflow: hidden;}
+.liketitle{}
+.likelist .pics{cursor: pointer;text-align: center;width: 100%;color: #666;}
+.likelist .pics a{display: block;width: 120px;}
+.likelist .pics a img{padding: 18px 20px;}
+.liketitle{font-size: 12px;}
+.jiantou{display: block;position: relative;left: 50px;}
+
+
+/**/
+.tabbox{width: 99%;height: 56px;margin-top: 47px;position: relative;padding-bottom: 20px;}
+.tabbox img{position: absolute;width: 350px;height: 2px;top: 21px;}
+.intleft{left: -20px;}
+.tab{font-size: 14px;width: 514px;height: 56px;margin: 0 auto;}
+.tab ul li{background: #999;width: 150px;position: relative;margin-right: 20px;background-color: #000;color: #FFF;height: 45px;float: left;line-height: 45px;text-align: center;border-radius: 3px;cursor: pointer;}
+.tab .inline{display:none;width: 22px;height: 11px;position: absolute;left: 65px;top: 45px;background: url(../img/details/tab_jiantou1.png) no-repeat;}
+.intright{right: 0px;}
+.goodsabout{margin-top: 30px;}
+.logistics{max-width: 685px;text-align: center;margin: auto;display: none;}
+
+
+
+

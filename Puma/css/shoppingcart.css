@@ -1,0 +1,22 @@
+@charset "utf-8";
+.main{max-width: 100%;}
+.shoppingcartit{margin: auto;padding: 0 20px;max-width: 1180px;}
+.shoppingcart{margin-top: 50px;padding-bottom: 7px;font-size: 40px;letter-spacing: 8px;border-bottom: 3px solid #333;margin-bottom: 40px;}
+
+
+.new{margin: 35px 90px 0 90px;}
+.newsbg{margin: auto;padding: 0 45px 45px;position: relative;max-height: 367px;}
+.news{margin: 0 auto;width: 100%;overflow: hidden;max-height: 322px;}	
+.newpic{float: left;width: 32%;padding:0 5px;position: relative;}	
+.newpic img{width: 100%;}	
+.newpic h3{width:100%;position: absolute;font-size: 28px;top:50%;text-align: center;
+			margin-top: -35px;line-height: 30px;font-weight: 500;}
+.newpic h3 a{color: white;}
+/*.newsbg*/ .newbtn{width: 32px;height: 57px;position: absolute;top:50%;margin-top: -22px;}
+.newsbg i,.hotSalebg i{left: 50%;margin-left: -12px;width: 24px;height: 52px;position: absolute;background: url(../img/logo/arrow.png);}
+/*.newsbg*/ .newbtnl{left: 0;}
+/*.newsbg*/ .newbtnr{right: 0;}
+.newbtnl i{background-position: 0 0;}
+.newbtnr i{background-position: -24px 0;}
+.new h1{font-size: 40px;margin-top: 5px;margin-bottom: 35px;font-weight: bold;text-align: center;}
+.new p{text-align: center;font-size: 24px;padding-bottom: 48px;margin: 0 0 5px;}
