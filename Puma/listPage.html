@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<script type="text/javascript" src="js/jquery-1.10.1.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
 		<link rel="stylesheet" href="css/topfoot.css" />
 		<link rel="stylesheet" href="css/listPage.css" />
 	</head>
@@ -233,8 +234,8 @@
 						</a>
 					</div></div>
 					<div class="car inlines">
-						<a class="shopcar" href="">
-							<span class="wz inline">购物车</span>
+						<a class="shopcar" href="shoppingcart.html">
+							<span class="wz inline">购物车<span id = "num"></span></span>
 							<span class = "shopcarlogo inline" id = "shopcarlogo"></span>
 						</a>
 					</div>
@@ -243,6 +244,28 @@
 			<div class="submenubg">
 				<div class="submenu">
 					
+				</div>
+			</div>
+			<div class="goodcartbg">
+				<div class="goodcart">
+					<!--<div class="goodsli">
+						<div class="mincarimg"><img src = "img/goods/1.png" /></div>
+						<div class="goodinform">
+							<p>Puma Vikky </p>
+							<p>¥699.00</p>
+							<h5>数量:<span>1</span></h5>
+						</div>
+					</div>
+					<div class="total">
+						<div class="totalprice">
+							<p>小计[<span></span>件商品]:<a></a></p>
+						</div>
+						<div class="settle">
+							去结账
+							<i></i>
+						</div>
+						<a href="shoppingcart.html" class="tocart">查看购物车</a>
+					</div>-->
 				</div>
 			</div>
 			
@@ -733,14 +756,14 @@
 						
 						<!--商品列表js-->
 						<script>
-							$(function(){
+						$(function(){
 								$.ajax({
 									type:"get",
 									url:"js/products.json",
 									success:function(data){
 										var cont = "";
 										for(var i = 0;i < data.length;i++){
-											cont+='<li class="goods"><div class="products"><div class="productsimg"><span class="span2">'+data[i].state+'</span><div class="productsimgin"><a href='
+											cont+='<li class="goods"><div class="products"><div class="productsimg"><span class="span2">'+data[i].state+'</span><span class="span3" id = '+i+'>加入购物车<img src="img/list/icon.png"/></span><div class="productsimgin"><a href='
 											+data[i].src+'><img src='+data[i].img+' /></a></div></div><div class="smallpic"><div class="productview"><ul>';
 											for(var j = 0;j < data[i].preview.length;j++){
 												cont+='<li class="previewpic"><a class="previewpica"><img src='+data[i].preview[j]+' /></a></li>'
@@ -754,8 +777,14 @@
 										}
 										$(".goodsbg ul").html(cont);
 										$(".data").html(data.length);
+										$(".goods").hover(function(){
+											$(".span3").eq($(this).index()).css("display","block");
+										},function(){
+											$(".span3").eq($(this).index()).css("display","none");
+										})
 										$(".previewpic").hover(function(){
 											$(this).css("border","3px solid red");
+											
 //											alert($(this).index())
 											var count = $(this).parent().parent().parent().parent().parent().index();
 //											alert($(".goods").eq(count).find(".productsimgin").find("a").html())
@@ -764,10 +793,154 @@
 											html = '<img src = '+data[count].preview[$(this).index()]+' />'
 											$(".goods").eq(count).find(".productsimgin").find("a").html(html)
 										},function(){
-											$(this).css("border","3px solid #ffffff")
+											$(this).css("border","3px solid #ffffff");
+										
 										})
+										
+										
+										
 									}
-								});
+								})
+								
+								$(".car").hover(function(){
+									if($.cookie("goods")==null){
+										return;
+									}
+									$(".goodcartbg").css("display","block");
+									$(".goodcartbg").animate({opacity:1},500);
+									shopcar();
+								},function(){
+									
+									$(".goodcartbg").css("display","none");
+								})
+								$(".goodcartbg").hover(function(){
+									$(".goodcartbg").css("opacity","1")
+									$(".goodcartbg").css("display","block");
+								},function(){
+									$(".goodcartbg").css("display","none");
+									$(".goodcartbg").animate({opacity:0.6},500);
+								})
+								
+								
+								sc_car();
+								var count = 0;
+								var t = null;
+								$(".goodsbg ul").on("click",".span3",function(){
+									clearTimeout(t);
+									count++;
+									var id = this.id;
+									var first = $.cookie('goods')==null?true:false;
+//									alert(first);
+									var same = false;
+									if(first){
+										$.cookie('goods','[{id:'+id+',num:1}]',{expires:7});
+										$.cookie('first','false');
+									}else{
+										var str = $.cookie('goods');
+										var arr = eval(str);
+										//遍历所有对象。如果id相同，让该商品数量递增 ;
+										for(var attr in arr){
+											if(arr[attr].id == id){		
+												arr[attr].num = arr[attr].num + 1;  //让json结构中num自增。
+												var cookieStr = JSON.stringify(arr);//将json对象转换成字符串.
+												$.cookie('goods',cookieStr);
+												same = true;
+											}
+										}
+										//如果id不同，重新建立商品对象;
+										
+										if(!same){
+											var obj  = {id:id,num:1};
+											arr.push(obj);
+											var cookieStr = JSON.stringify(arr);
+											$.cookie('goods',cookieStr);
+										}
+									}
+									sc_car();
+									shopcar();
+									
+									$(".goodcartbg").css("display","block");
+									$(".goodcartbg").stop().animate({opacity:1},500);
+									
+									 t = setTimeout(function(){
+										
+										$(".goodcartbg").animate({opacity:0.6},500);
+										$(".goodcartbg").css("display","none");},3000);
+										count = 0;
+								})
+//								function total(){
+//									var sc_str = $.cookie('goods');
+//									
+//								}
+								function sc_car(){
+									var sc_str = $.cookie('goods');
+									if(sc_str){//如果购物车cookie不为空。
+										var sc_obj = eval(sc_str);
+										
+										var sc_num = 0 ; 
+										for(var i in sc_obj){
+											sc_num = Number(sc_obj[i].num) + sc_num;
+										}
+										$("#num").html(sc_num);
+										return sc_num;
+									}
+								}
+								function shopcar(){
+									$.ajax({
+										type:"get",
+										url:"js/products.json",
+										success:function(data){
+											
+											var sc_str = $.cookie('goods');
+											if(sc_str){
+												var html = "";
+												var sc_obj = eval(sc_str);
+												var sc_num = 0 ;
+//												<div class="goodsli">
+//													<div class="mincarimg"><img src = "img/goods/1.png" /></div>
+//													<div class="goodinform">
+//														<p>Puma Vikky </p>
+//														<p>¥699.00</p>
+//														<h5>数量:<span>1</span></h5>
+//													</div>
+//												</div>
+//												<div class="total">
+//													<div class="totalprice">
+//														<p>小计[<span></span>件商品]:<a></a></p>
+//													</div>
+//													<div class="settle">
+//														去结账
+//														<i></i>
+//													</div>
+//													<a href="shoppingcart.html" class="tocart">查看购物车</a>
+//												</div>
+												for(var i in sc_obj){
+													html+='<div class="goodsli"><div class="mincarimg"><img src = '+data[sc_obj[i].id].img+'/></div><div class="goodinform"><p>'
+													+data[sc_obj[i].id].title+'</p><p class = "pri">';
+													html+=data[sc_obj[i].id].price;													
+													html+='</p><h5>数量:<span>'+sc_obj[i].num+'</span></h5></div></div>'
+												}
+												html+='<div class="total"><div class="totalprice"><p>小计[<span></span>件商品]:<a class = "inline"></a></p>'+
+													'</div><div class="settle">去结账<i></i></div><a href="shoppingcart.html" class="tocart">查看购物车</a></div>'
+												$(".goodcart").html(html);
+												$(".totalprice p span").html(sc_car());
+												var count = 0;
+												for(var j = 0;j < $(".goodsli").length;j++){
+													var price = Number($(".goodsli").eq(j).find(".pri").find("span").html());
+													var amount =  Number($(".goodsli").eq(j).find("h5").find("span").html());
+													price = price*amount;
+													count+=price;
+												}
+												count = count.toFixed(2);
+												$(".totalprice a").html("¥"+count)
+											}
+											
+//											
+										}
+										
+									});
+//									
+								}
 							})
 						</script>
 					</div>

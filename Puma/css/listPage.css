@@ -108,7 +108,9 @@
 .goods{float: left;min-height: 450px;text-align: center;padding: 0px 10px;box-sizing: border-box;border: 1px solid #FFF;width: 25%;}
 .products{position: relative;height: 410px;padding: 20px 0px;box-sizing: border-box;}
 .productsimg{position: relative;height: 220px;}
-.span2{position: absolute;left: 0;top: 0px;max-width: 204px;padding: 0 12px;height: 18px;background: #000;color: #FFF;font-size: 12px;text-align: center;overflow: hidden;}
+.productsimg span{height: 18px;position: absolute;top: 0px;padding: 0 12px;color: #FFF;font-size: 12px;text-align: center;}
+.span2{left: 0;max-width: 204px;overflow: hidden;background: #000;}
+.span3{right: 0;background: red;cursor: pointer;display: none;}
 .smallpic{margin: 20px 0px 15px 0px;position: relative;}
 .productview{position: relative;padding: 0px;overflow: hidden;width: 184px;margin: 0px auto;}
 .productview ul{width: 184px;margin: autoposition: relative;    padding: 5px 0px;white-space: nowrap;;}

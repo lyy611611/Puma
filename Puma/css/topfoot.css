@@ -94,6 +94,26 @@
 			.wit238{width: 210px;}
 			.wit500{width: 500px;}
 			.submenu ul li{float: left;width: 85px;margin: 0 10px;min-height: 130px;}
+			
+			/*导航栏购物车*/
+			.goodcartbg{position: absolute;width: 386px;top:50px;right:45px;background: white;
+					border: 1px solid #ccc;opacity: 0.6;filter: alpha(opacity=99);display: none;}
+			.goodcart{margin: 20px 38px 25px;}
+			.goodsli{padding-top: 10px;border-bottom: 1px dotted #CDCDCD;overflow: hidden;}
+			.mincarimg{float: left;width: 75px;height: 75px;padding: 15px;}
+			.mincarimg img{width: 100%;}
+			.totalprice p span{margin: 0 3px;}
+			.goodinform{width: 110px;float: left;font-size: 13px;line-height: 1.42857143;padding-top: 15px;margin-left: 15px;}
+			.goodinform h5{font-size: 12px;}
+			.goodinform h5 span{color: #999;margin-left: 5px;font-weight: normal;}
+			.total{border-top: 1px dotted #000;padding: 30px 0;font-weight: bold;text-align: center;}
+			.totalprice{font-size: 20px;}	
+			.settle{display:inline-block;text-align: center;position: relative;margin-top: 30px;width:180px;height: 40px;font-size: 14px;color: #FFF;cursor: pointer;background-color: #ff0000;line-height: 45px;}		
+			.tocart{position: relative;top:-4px;margin-left: 40px;text-decoration: underline;}
+			.settle i{position: absolute;top:3px;right: 3px;border-top: 4px solid white;
+						border-right: 4px solid white;border-bottom: 4px solid transparent;
+						border-left: 4px solid transparent;}
+			.totalprice .inline{margin-left: 5px;}
 	/*滚动文字*/		
 			.wzbanner{height: 40px;overflow: hidden;background: black;width: 100%;text-align: center;}
 			.sbanner,.swzbanner{margin: 0 auto;font-family: "微软雅黑", "黑体","宋体", Arial, Helvetica, sans-serif;

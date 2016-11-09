@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<script type="text/javascript" src="js/jquery-1.10.1.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
 		<link rel="stylesheet" href="css/topfoot.css" />
 		<link rel="stylesheet" href="css/shoppingcart.css" />
 	</head>
@@ -362,9 +363,11 @@
 				});
 			})
 		</script>
-		<div class="main">
+		<div class="body">
 			<div class="shoppingcartit">
-				<div class="shoppingcart">购物车</div>
+				<div class="shoppingcart">购物车<div class="car_btn tocount">去结账<i></i></div>
+				<a href="listPage.html">◀&nbsp;继续购物</a>
+				</div>
 			</div>
 			<!--新品上市-->
 			<div class="clear"></div>
@@ -394,9 +397,120 @@
 					})
 				})
 			</script>
+		
+			<!--小计-->
+			<div class="total_pricebg">
+				<div class="total_price">
+					总计：￥<span></span>
+				</div>
+			</div>
+			
+			<div class="car_list">
+				<div class="tit">
+					<div class="goodtit"><span class="selectbox" id = "selectall"></span>商品</div>
+					<div class="titrig">
+						<div>尺寸</div>
+						<div>数量</div>
+						<div>单价</div>
+						<div>总价</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="goodlist">
+					<!--<div class="goods_tobuy">
+							<div class="goodstit">
+								<span class="selectbox"></span>
+								<div class="goodsimg"><img src="img/goods/1.png"/></div>
+								<div class="goos_about">
+									<h6>IGNITE s</h6>
+									<p>产品编号 : <span></span></p>
+									<p>颜色 : <span></span></p>
+									<div class="delet">删除</div>
+									<div class="edit">编辑</div>
+								</div>
+							</div>
+						
+							<div class="goodsrig">
+								<div class="gooddiv size">36</div>
+								<div class="gooddiv data">
+									<div class="selectnum">
+										<div class="selectnumbox"><b>1</b></div>
+										<span><i></i></span>
+										<div class="numli">
+											<ul>
+												<li style="background: red;">1</li>
+												<li>2</li>
+												<li>3</li>
+												
+											</ul>
+										</div>
+									</div>
+									<div class="youhuo inline">
+										<img src = "img/details/youhuo.png" />
+										<span>有货</span>
+									</div>
+									
+								</div>
+								<div class="gooddiv">999</div>
+								<div class="gooddiv">999</div>
+							</div>
+						</div>-->
+				</div>
+			</div>
 		</div>
 		
-		
+		<script>
+			$(function(){
+				$.ajax({
+					type:"get",
+					url:"js/products.json",
+					success:function(data){
+						var sc_str = $.cookie('goods');
+						if(sc_str){
+							var html = "";
+							var sc_obj = eval(sc_str);
+							var sc_num = 0 ;
+							for(var i in sc_obj){
+								html+='<div class="goods_tobuy"><div class="goodstit"><span class="selectbox"></span><div class="goodsimg"><img src='+
+								data[sc_obj[i].id].img+'/></div><div class="goos_about"><h6>IGNITE s</h6><p>产品编号 : <span></span></p><p>颜色 : <span></span></p>'+
+								'<div class="delet">删除</div><div class="edit">编辑</div></div></div><div class="goodsrig"><div class="gooddiv size">36</div>'+
+								'<div class="gooddiv data"><div class="selectnum"><div class="selectnumbox"><b>'+sc_obj[i].num+'</b></div><span><i></i></span><div class="numli">'+
+								'<ul><li style="background: red;">1</li><li>2</li><li>3</li></ul></div></div><div class="youhuo inline"><img src = "img/details/youhuo.png" />'+
+								'<span>有货</span></div></div><div class="gooddiv iprice">'  +data[sc_obj[i].id].price+'</div><div class = "gooddiv totpri"></div></div></div>'
+								
+							}
+							$(".goodlist").html(html);
+						}else{
+							$(".total_pricebg,.car_list,.tocount,.shoppingcart a").css("display","none");
+							$(".new").css("display","block");
+						}
+//						$(".selectnum span").click(function(){
+//							$(".numli").css("display","block");
+//						})
+//						$(".numli li").click(function(){
+//							$(".selectnumbox b").html($(this).html());
+//							$(".numli").css("display","none");
+//							
+//						})
+						count();
+						function count(){
+							var count = 0;
+							for(var j = 0;j<$(".goods_tobuy").length;j++){
+								var price = Number($(".goods_tobuy").eq(j).find(".iprice").find("span").html());
+								var amount = Number($(".goods_tobuy").eq(j).find(".selectnumbox").find("b").html());
+								price = price*amount;
+								var pri = price.toFixed(2);
+								$(".goods_tobuy").eq(j).find(".totpri").html("¥"+pri);
+								count+=price;
+							}
+							count = count.toFixed(2);
+							$(".total_price span").html(count);
+						}
+						
+					}
+				});
+			})
+		</script>
 		
 		
 		<!--邮箱 门店-->
@@ -555,6 +669,13 @@
 			<a class="inline"><p>沪ICP备10003828号-5</p></a>
 		</div>
 	</div>
-		
+	<script>
+		$(function(){
+			
+			
+			
+//			
+		})
+	</script>
 	</body>
 </html>
