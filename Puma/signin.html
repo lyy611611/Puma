@@ -5,8 +5,9 @@
 		<title></title>
 		<script type="text/javascript" src="js/jquery-1.10.1.min.js" ></script>
 		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+		<script type="text/javascript" src="js/shopcar.js" ></script>
 		<link rel="stylesheet" href="css/topfoot.css" />
-		<link rel="stylesheet" href="css/shoppingcart.css" />
+		<link rel="stylesheet" href="css/signin.css" />
 	</head>
 	<body>
 		<!--顶部-->	
@@ -234,7 +235,7 @@
 					</div></div>
 					<div class="car inlines">
 						<a class="shopcar" href="">
-							<span class="wz inline">购物车</span>
+							<span class="wz inline">购物车<span id = "num"></span></span>
 							<span class = "shopcarlogo inline" id = "shopcarlogo"></span>
 						</a>
 					</div>
@@ -243,6 +244,11 @@
 			<div class="submenubg">
 				<div class="submenu">
 					
+				</div>
+			</div>
+			<div class="goodcartbg">
+				<div class="goodcart">
+				
 				</div>
 			</div>
 			
@@ -363,205 +369,212 @@
 				});
 			})
 		</script>
-		<div class="body">
-			<div class="shoppingcartit">
-				<div class="shoppingcart">购物车<div class="car_btn tocount">去结账<i></i></div>
-				<a href="listPage.html">◀&nbsp;继续购物</a>
-				</div>
-			</div>
-			<!--新品上市-->
-			<div class="clear"></div>
-			<div class="new main">
-				<p>您的购物车是空的!<br>我们可以帮您:</p>
-				<h1>按分类购买</h1>
-				<div class="newsbg">
-					<div class="news">
-						<div class="newpic1 newpic"><img src="img/shoppingcart/cart_img1.jpg"/><h3 class="nh31 nh3"><a href="#">男士</a></h3></div>
-						<div class="newpic1 newpic"><img src="img/shoppingcart/cart_img2.jpg"/><h3 class="nh32 nh3"><a href="#">女士</a></h3></div>
-						<div class="newpic1 newpic"><img src="img/shoppingcart/cart_img3.jpg"/><h3 class="nh33 nh3"><a href="#">儿童</a></h3></div>
-					</div>
-					<a class="newbtnl newbtn inline"><i></i></a>
-					<a class="newbtnr newbtn inline"><i></i></a>
-				</div>
-			</div>
-			<!--新品上市js-->
-			<script>
-				$(function(){
-					$(".newpic1").mouseenter(function(){
-						$(".news img").eq($(this).index()).animate({width:"106%",height:"104%","margin-top":"-2%","margin-left":"-3%"},200);
-						
-					}
-					)
-					$(".newpic1").mouseleave(function(){
-						$(".news img").eq($(this).index()).animate({width:"100%",height:"100%","margin-top":"0","margin-left":"-0"},100);
-					})
-				})
-			</script>
-		
-			<!--小计-->
-			<div class="total_pricebg">
-				<div class="total_price">
-					总计：￥<span></span>
-				</div>
-			</div>
-			
-			<div class="car_list">
-				<div class="tit">
-					<div class="goodtit"><span class="selectbox" id = "selectall">√</span>商品</div>
-					<div class="titrig">
-						<div>尺寸</div>
-						<div>数量</div>
-						<div>单价</div>
-						<div>总价</div>
-					</div>
-				</div>
-				<div class="clear"></div>
-				<div class="goodlist">
-					<!--<div class="goods_tobuy">
-							<div class="goodstit">
-								<span class="selectbox"></span>
-								<div class="goodsimg"><img src="img/goods/1.png"/></div>
-								<div class="goos_about">
-									<h6>IGNITE s</h6>
-									<p>产品编号 : <span></span></p>
-									<p>颜色 : <span></span></p>
-									<div class="delet">删除</div>
-									<div class="edit">编辑</div>
+		<!--主体-->
+		<div class="mainbodybg">
+			<div class="mainbody">
+				<div class="_main">
+					<div class="checktit">创建账户</div>
+					<div class="checkbody">
+						<p class="pro">标有<span class="red">*</span>的所有项目必须填写</p>
+						<div class="inform">
+							<div class="baseinfro">
+								<div class="name">
+									<label class="lab _name"><span class="red">*</span>姓名</label>
+									<input class="txtt realname" type="text" placeholder="请输入您的姓名"/>
+									<a class="nam inline"></a>
+								</div>
+								<script>
+									$(".realname").blur(function(){
+										var str = $(".realname").val();
+										if(str){
+											$(".nam").css("background","url(img/logo/yes.png) no-repeat")
+											$(".realname").css("background","#eaeaea")
+										}else{
+											$(".nam").css("background","url(img/logo/error.png) no-repeat")
+											$(".realname").css("background","#FF7F7F")
+										}
+									})
+								</script>
+								<div class="sex">
+									<label class="lab">性别</label>
+									<span class="boy"><i></i>男</span>
+									<span class="girl"><i></i>女</span>
+								</div>
+								<script>
+									$(".boy").click(function(){
+										$(".boy i").css("background","url(img/logo/xb_img1.jpg) no-repeat")
+										$(".girl i").css("background","url(img/logo/xb_img2.jpg) no-repeat")
+									})
+									$(".girl").click(function(){
+										$(".girl i").css("background","url(img/logo/xb_img1.jpg) no-repeat")
+										$(".boy i").css("background","url(img/logo/xb_img2.jpg) no-repeat")
+									})
+								</script>
+							</div>
+							<div class="baseinfro">
+								<div class="name">
+									<label class="lab _name"><span class="red">*</span>手机号码</label>
+									<input class="txtt phone" type="text" placeholder="输入您的手机号码"/>
+									<p class="red pho"></p>
 								</div>
 							</div>
-						
-							<div class="goodsrig">
-								<div class="gooddiv size">36</div>
-								<div class="gooddiv data">
-									<div class="selectnum">
-										<div class="selectnumbox"><b>1</b></div>
-										<span><i></i></span>
-										<div class="numli">
-											<ul>
-												<li style="background: red;">1</li>
-												<li>2</li>
-												<li>3</li>
-												
-											</ul>
-										</div>
-									</div>
-									<div class="youhuo inline">
-										<img src = "img/details/youhuo.png" />
-										<span>有货</span>
-									</div>
-									
+							<script>
+								$(".phone").blur(function(){
+									var str = $(".phone").val();
+									if(str.length==0){
+										$(".pho").html("请输入手机号");
+									}else if(str.length!=11){
+										$(".pho").html("手机号无效");
+									}else{
+										for(var i = 0;i<str.length;i++){
+											if(str[i]>=0&&str[i]<=9){
+												$(".pho").html("");
+											}else{$(".pho").html("手机号无效");}
+										}
+									}
+								})
+							</script>
+							<div class="baseinfro">
+								<div class="name">
+									<label class="lab _name"><span class="red">*</span>图片验证码</label>
+									<input class="txtt yzm" type="text" placeholder="输入左图中的字母和数字"/>
+									<a class="yz inline"></a>
+									<p class="red yzcw"></p>
 								</div>
-								<div class="gooddiv">999</div>
-								<div class="gooddiv">999</div>
 							</div>
-						</div>-->
-				</div>
-			
-				
-			</div>
-		</div>
-		
-		<div class="prili">
-			<input placeholder="请输入优惠券码" class="youhui"/>
-			<div class="duihuan">兑换<i></i></div>
-			<div class="xiaoji">
-				<ul>
-					<li class="tot_pr">小计<span>¥<a>0.00</a></span></li>
-					<li class="yhpri">折扣<span>¥<a>0.00</a></span></li>
-				</ul>
-			</div>
-			<p class="totxiaoji">总计&nbsp;&nbsp;&nbsp;¥<span>0.00</span></p>
-			<div class="car_btn tocoun">
-			去结账
-			<i></i>
-			</div>
-		</div>
-
-		
-
-		<script>
-			$(function(){
-				$.ajax({
-					type:"get",
-					url:"js/products.json",
-					success:function(data){
-						newcar();
-						
-						function newcar(){
-							var sc_str = $.cookie('goods');
-							if(sc_str&&sc_str!="[]"){
-								var html = "";
-								var sc_obj = eval(sc_str);
-								var sc_num = 0 ;
-								for(var i in sc_obj){
-									html+='<div class="goods_tobuy"><div class="goodstit"><span class="selectbox">√</span><div class="goodsimg"><img src='+
-									data[sc_obj[i].id].img+'/></div><div class="goos_about"><h6>IGNITE s</h6><p>产品编号 : <span></span></p><p>颜色 : <span></span></p>'+
-									'<div class="delet">删除</div><div class="edit">编辑</div></div></div><div class="goodsrig"><div class="gooddiv size">36</div>'+
-									'<div class="gooddiv data"><div class="selectnum"><div class="selectnumbox"><b>'+sc_obj[i].num+'</b></div><span><i></i></span><div class="numli">'+
-									'<ul><li style="background: red;">1</li><li>2</li><li>3</li></ul></div></div><div class="youhuo inline"><img src = "img/details/youhuo.png" />'+
-									'<span>有货</span></div></div><div class="gooddiv iprice">'  +data[sc_obj[i].id].price+'</div><div class = "gooddiv totpri"></div></div></div>'
-									
-								}
-								$(".goodlist").html(html);
-							}else{
-								$(".total_pricebg,.car_list,.tocount,.shoppingcart a,.prili,.pri_titbg").css("display","none");
-								$(".new").css("display","block");
-							}
-						}
-						
-						
-//						$(".selectnum span").click(function(){
-//							$(".numli").css("display","block");
-//						})
-//						$(".numli li").click(function(){
-//							$(".selectnumbox b").html($(this).html());
-//							$(".numli").css("display","none");
-//							
-//						})
-						count();
-						function count(){
-							var count = 0;
-							for(var j = 0;j<$(".goods_tobuy").length;j++){
-								var price = Number($(".goods_tobuy").eq(j).find(".iprice").find("span").html());
-								var amount = Number($(".goods_tobuy").eq(j).find(".selectnumbox").find("b").html());
-								price = price*amount;
-								var pri = price.toFixed(2);
-								$(".goods_tobuy").eq(j).find(".totpri").html("¥"+pri);
-								count+=price;
-							}
-							count = count.toFixed(2);
-							$(".total_price span").html(count);
-//							alert($(".total_price span").html());
-							$(".tot_pr a").html($(".total_price span").html())
-							$(".totxiaoji span").html($(".total_price span").html())
-						}
-//						$(".delet").click(function(){
-//							
-//							var str = $.cookie('goods');
-//							var arr = eval(str);
-//							arr.splice($(this).parent().parent().parent().index(),1);
-//							var cookiestr = JSON.stringify(arr);
-//							$.cookie("goods",cookiestr);
-//							newcar();
-//							count();
-//						})
-						$(".goodlist").on("click",".delet",function(){
-							var str = $.cookie('goods');
-							var arr = eval(str);
-							arr.splice($(this).parent().parent().parent().index(),1);
-							var cookiestr = JSON.stringify(arr);
-							$.cookie("goods",cookiestr,{expires:7});
 							
-							newcar();
-							count();
-						})
-						
+							<div class="baseinfro">
+								<div class="name">
+									<label class="lab _name"><span class="red">*</span>短信验证码</label>
+									<input class="txtt dx" type="text" placeholder="输入短信验证码"/>
+									<a class="dxyz inline">获取验证码</a>
+								</div>
+							</div>
+							<script>
+								$(function(){
+									$(".yzm").blur(function(){
+										var str = $(".yzm").val();
+										if(str==""){
+											$(".yzcw").html("请输入验证码")
+											$(".yzm").css("background","#FF7F7F")
+										}else{
+											$(".yzm").css("background","#eaeaea");
+											$(".yzcw").html("")
+											
+										}
+									})
+									$(".dxyz").click(function(){
+										var str = $(".yzm").val();
+										if(str==""){
+											$(".yzcw").html("请输入验证码")
+											$(".yzm").css("background","#FF7F7F")
+										}else{
+											$(".yzm").css("background","#eaeaea");
+											$(".yzcw").html("")
+											$(".dxyz").html("已发送");
+										}
+									})
+								})
+							</script>
+							<div class="baseinfro">
+								<div class="psw">
+									<label class="lab _name"><span class="red">*</span>密码</label>
+									<input class="txtt psd" type="password" placeholder="输入6-20位的数字加字母组合的密码"/>
+									<p class="red yzpsd"></p>
+								</div>
+							</div>
+							<div class="baseinfro">
+								<div class="psw">
+									<label class="lab _name"><span class="red">*</span>确认密码</label>
+									<input class="txtt tpsd" type="password" placeholder="输入确认密码"/>
+									<p class="red yztpsd"></p>
+								</div>
+							</div>
+							<script>
+								$(function(){
+									$(".psd").blur(function(){
+										var str = $(".psd").val();	
+										
+										if(str.length<6||str.length>20){
+											$(".yzpsd").html("密码长度6~20个字符")
+										}else{
+											$(".yzpsd").html("")
+										}
+									})
+									$(".tpsd").blur(function(){
+										var str = $(".psd").val();		
+										var st = $(".tpsd").val();	
+										if(str!=st){
+											
+											$(".yztpsd").html("两次密码不一致")
+										}else{
+											$(".yztpsd").html("")
+										}
+									})
+									
+								})
+							</script>
+							<div class="baseinfro">
+								<div class="psw">
+									<label class="lab _name"><span class="red">*</span>邮箱</label>
+									<input class="txtt mail" type="password" placeholder="输入邮箱"/>
+								</div>
+							</div>
+							<div class="baseinfro">
+								<label class="dingyue dingyue1"><i></i>我愿意订阅来自cn.puma.com的邮件</label>
+							</div>
+							<div class="baseinfro">
+								<label class="dingyue dingyue2"><i></i>我已阅读并同意PUMA中国官方商城的<a href = "" style="text-decoration: underline;">《使用条款》</a>和<a href="" style="text-decoration: underline;">《隐私政策》。</a></label>
+							</div>
+							<p class="red tk"></p>
+							<div class="car_btn"><i></i>提交</div>
+							<script>
+								$(function(){
+									$(".dingyue").click(function(){
+										$(this).find("i").html("✔");
+									})
+									$(".car_btn").click(function(){
+										
+										
+										if($(".dingyue1 i").html()!="✔"||$(".dingyue2 i").html()!="✔"){
+											$(".tk").html("请先勾选相关隐私政策和使用条款")
+										}else{	
+											
+											$(".tk").html("")
+											alert("注册成功")
+											
+										}
+									})
+								})
+							</script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var str = testStr(4);
+			$(".yz").html(str);
+		
+			function testStr(n){
+				var arr=[];
+				for (var i=0;i<n;i++) {
+					var num=parseInt(Math.random()*100);
+					if (num>=0&&num<=9) {
+						arr.push(num);
+					}else if (num>=10&&num<=35) {
+						var charStr = String.fromCharCode(num + 87);
+						arr.push(charStr);
+					}else if (num>=65&&num<=90) {
+						var charStr = String.fromCharCode(num);
+						arr.push(charStr);
+					}else{
+						i--;
 					}
-					
-				});
-			})
+				}
+				return arr.join("");
+				}
 		</script>
-		<!--助您购买-->
 		<div class="pri_titbg">
 			<div class="pri_tit"></div>
 			<div class="goumai">puma助您安全购买</div>
@@ -581,7 +594,8 @@
 			</div>
 		</div>
 		
-		<!--邮箱 门店-->
+		
+				<!--邮箱 门店-->
 	<div class="clear"></div>
 	<div class="imessagebg">
 		<div class="imessage">
@@ -737,13 +751,5 @@
 			<a class="inline"><p>沪ICP备10003828号-5</p></a>
 		</div>
 	</div>
-	<script>
-		$(function(){
-			
-			
-			
-//			
-		})
-	</script>
 	</body>
 </html>

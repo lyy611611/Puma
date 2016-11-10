@@ -2,11 +2,11 @@
 .body{max-width: 1180px;margin: auto;}
 .shoppingcartit{margin: auto;padding: 0 20px;max-width: 1180px;}
 .shoppingcart{margin-top: 50px;padding-bottom: 7px;font-size: 40px;letter-spacing: 8px;border-bottom: 3px solid #333;margin-bottom: 40px;}
-.car_btn{text-align: center;position: relative;width: 170px;height: 45px;font-size: 14px;color: #FFF;cursor: pointer;background-color: #ff0000;line-height: 45px;}
-.car_btn i,.btn i{position: absolute;top:3px;right: 3px;border-top: 4px solid white;
+.car_btn{text-align: center;position: relative;font-size: 14px;color: #FFF;cursor: pointer;background-color: #ff0000;line-height: 45px;}
+.car_btn i,.btn i,.duihuan i{position: absolute;top:3px;right: 3px;border-top: 4px solid white;
 						border-right: 4px solid white;border-bottom: 4px solid transparent;
 						border-left: 4px solid transparent;}
-.tocount{float: right;}
+.tocount{float: right;width: 170px;height: 45px;}
 .shoppingcart a{float: right;font-size: 14px;line-height: 40px;letter-spacing: 0;margin-right: 25px;}
 
 /*小计*/
@@ -15,7 +15,7 @@
 /*购物车清单*/
 .car_list{float: left;width: 80.5%;    padding-top: 24px;padding-bottom: 55px;}
 .tit{    font-size: 14px;color: #999;overflow: hidden;}
-.selectbox{margin-right: 15px;width: 14px;height: 14px;display: inline-block;float: left;cursor: pointer;border: 1px solid #999;}
+.selectbox{margin-right: 15px;width: 14px;height: 14px;display: inline-block;float: left;cursor: pointer;border: 1px solid #999;text-align: center;color: red;line-height: 14px;}
 .goodtit{float: left;}
 .titrig{float: right;width: 360px;}
 .titrig div{width: 25%;float: left;}
@@ -45,9 +45,29 @@
 .youhuo{margin-top: 14px;margin-left: 5px;position: relative;margin-top: 2px;font-size: 12px;}
 .youhuo img{position: relative;top:5px;}
 
+/*小计*/
+.prili{width: 200px;float: left;padding-top: 24px;padding-bottom: 49px;margin-left: 30px;}
+.youhui{border: none;outline:none;float: left;width: 70%;height: 29px;background: #eaeaea;font-size: 12px;color: #333;padding-left: 10px;}
+.duihuan{font-size:12px;line-height:30px;text-align:center;color:#FFFFFF;background: red;display: inline-block;width: 40px;height: 29px;position: relative;right: 10px;}
+.xiaoji{margin: 25px 0;padding: 25px 0;font-size: 14px;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;width: 100%;}
+.xiaoji ul li span{float: right;}
+.xiaoji ul li{margin-bottom: 8px;}
+.totxiaoji{text-align: right;font-size: 16px;font-weight: bold;margin-bottom: 25px;}
+.tocoun{width:170px;height: 42px;margin: auto;}
+
+/*购买*/
+.pri_titbg{width: 1180px;margin: auto;}
+.pri_tit{width:100%;height: 2px;border-bottom: 1px solid #ccc;    overflow: hidden;}
+.goumai{margin:auto;text-align: center;top: -10px;background: #FFF;width: 181px;height: 15px;position: relative;font-size: 14px;color: #999;}
+.puma_con{margin-bottom: 91px;margin-top: 43px;font-size: 14px;color: #999;overflow: hidden;}
+.fukuan{width: 33.3%;text-align: center;float: left;}
+.fukuan p{font-size: 14px;color: #999;margin-bottom: 70px;}
+.fukuan .kehu{margin-bottom: 49px;}
+
+
 /*空购物车*/
 .new{margin: 35px 90px 0 90px;display: none;}
-.newsbg{margin: auto;padding: 0 45px 45px;position: relative;max-height: 367px;}
+.newsbg{margin: auto;padding: 0 45px 45px;position: relative;max-height: 295px;}
 .news{margin: 0 auto;width: 100%;overflow: hidden;max-height: 322px;}	
 .newpic{float: left;width: 32%;padding:0 5px;position: relative;}	
 .newpic img{width: 100%;}	

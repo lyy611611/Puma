@@ -1,8 +1,10 @@
 $(function(){
 			$(".car").hover(function(){
-				if($.cookie("goods")==null){
+				if($.cookie("goods")==null||($.cookie("goods"))=="[]"){
+					
 					return;
 				}
+				
 				$(".goodcartbg").css("display","block");
 				$(".goodcartbg").animate({opacity:1},500);
 				shopcar();
